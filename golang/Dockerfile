@@ -9,9 +9,11 @@ RUN cd /tmp
 
 RUN curl -O -L https://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 RUN rpm -ivh epel-release-6-8.noarch.rpm
+RUN rm epel-release-6-8.noarch.rpm
 
 RUN curl -O -L http://golang.org/dl/go1.3.linux-amd64.tar.gz
 RUN tar -C /opt -xzf go1.3.linux-amd64.tar.gz
+RUN rm go1.3.linux-amd64.tar.gz
 
 ENV GOROOT /opt/go
 ENV PATH $PATH:$GOROOT/bin
