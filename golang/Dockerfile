@@ -1,6 +1,6 @@
 # golang
 #
-# VERSION	0.0.1
+# VERSION	0.0.2
 FROM centos
 MAINTAINER epy0n.0ff <epy0n.0ff@mail.com>
 
@@ -20,5 +20,6 @@ ENV PATH $PATH:$GOROOT/bin
 
 RUN mkdir /opt/gocode
 ENV GOPATH /opt/gocode
+RUN yum -y install ca-certificates
 RUN yum -y install git.x86_64
 RUN yum -y install mercurial.x86_64
