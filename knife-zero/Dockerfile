@@ -17,7 +17,7 @@ RUN apk update && \
     ./configure && \
     make && \
     make install && \
-    gem install knife-zero rb-readline && \
+    gem install knife-zero rb-readline serverspec && \
     mkdir -p /root/chef_repo
 
 VOLUME /root/chef_repo
