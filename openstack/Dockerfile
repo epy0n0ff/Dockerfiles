@@ -1,21 +1,23 @@
 # OpenStack cli Container
 #
-# VERSION       0.1.0
+# VERSION       0.2.0
 
-FROM alpine:3.4
+FROM alpine:3.7
 
 MAINTAINER epy0n.0ff <epy0n.0ff@gmail.com>
 
 RUN apk update && \
-    apk add py-pip \
-    ca-certificates \ 
-    python-dev \
+    apk add python3 \
+    ca-certificates \
+    python3-dev \
     gcc \
     linux-headers \
-    libc-dev && \
-    pip install --upgrade pip && \
-    pip install python-openstackclient \
+    libc-dev \
+    libffi-dev \
+    openssl-dev && \
+    pip3 install python-openstackclient \
     python-novaclient \
+    python-cinderclient \
     python-neutronclient
 
 ENV OS_AUTH_URL=
